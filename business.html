@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LoanAppln</title>
+    <style>		
+    body{
+        background-image: url('/static/img/business.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        text-decoration: solid;
+        
+    }
+    .first{
+        color:black;
+        background-color: bisque;
+    }
+    </style>
+</head>
+<body>
+        <form action='/predict' method="post">
+            <h2 style="text-align: center;">Business Loan Application Evaluator</h2>
+            <div style="float:left;margin-left: 200px; text-align: center;">
+                <h3>Gender</h3><select name="gender" class="first"  required="required">
+                    <option value="1">Male</option>
+                    <option value="0">Female</option>
+                </select>
+                <h3>Married?</h3><select name="married" class="first"  required="required">
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                </select>
+                <h3>Any Dependents?</h3><select name="dependents" class="first"   required="required">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3+</option>
+                </select>                          
+                <h3>Education</h3><select name="education"  class="first"  required="required">
+                    <option value="1">Graduate</option>
+                    <option value="0">No Graduate</option>
+                </select>
+                <h3>Self Employed?</h3><select name="selfemployed" class="first"  required="required">
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                </select>
+                <h3>Applicant Income</h3><input  class="first"  name="applicantincome" type="number" min="0" >
+
+            </div>
+            <div style="float:right;margin-right: 350px; text-align: center;">
+                <h3>Coapplicant Income</h3><input class="first"   name="coapplicantincome" required="required" min="0" >
+                <h3>Loan Amount</h3><input class="first" name="loanamount"  required="required" min="0">
+                <h3>Loan Amount Term</h3><input  class="first"  name="loanamountterm" required="required" min="0" max="360">
+                <h3>Credit History (1- has all debts paid, 0- not paid)</h3><select name="credithistory" class="first"   required="required">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                </select>
+                <h3>Property Area</h3><select name="propertyarea" class="first"  required="required">
+                    <option value="2">Urban</option>
+                    <option value="1">SemiUrban</option>
+                    <option value="0">Rural</option>
+                </select>
+            </div>
+            <div style="margin-left: 400px ; margin-top: 500px ; ">
+
+            <button  style="color: black;background-color:burlywood;width:200px ;height: 40px;" type="submit ">Evaluate the Loan Application</button>
+            <button><a href="/">Back</a></button>
+            </div>  
+            <h3 style="color:black;text-align: center;">{{result}}</h3>
+        </form>
+    
+</body>
+
+</html>

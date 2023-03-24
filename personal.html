@@ -1,0 +1,63 @@
+<html>
+    <head>
+        
+        <style>
+        body{
+            background-image: url('/static/img/personal.jpeg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            text-decoration: solid;
+            
+        }
+    </style>
+        
+
+    </head>
+    <body>
+        <form action="/personal" method="POST">
+            <h1 style="margin-left: 150px ;">Personal Loan Evaluator</h1>
+       
+        <div style="float:left;margin-left: 100px; text-align: center;">
+        <h3>Income</h3>
+        <input type="number" name="income" required="required" min="0"><br>
+        <h3>Age</h3>
+        <input type="number" name="age" required="required" min="18"><br>
+        <h3>Experiance</h3>
+        <input type="number" name="experiance" required="required" min="0"><br>
+        <h3>Marital Status</h3>
+        <select name="marital" required="required">
+            <option value="0">married</option>
+            <option value="1">single</option>
+        </select><br>
+        </div>
+        <div style="float:right;margin-right: 700px; text-align: center;">
+        <h3>House Ownership</h3>
+        <select name="house" required="required">
+            <option value="2">rented</option>
+            <option value="1">owned</option>
+            <option value="0">norent_noown</option>
+        </select><br>
+        <h3>car ownership</h3>
+        <select name="car" required="required">
+            <option value="0">no</option>
+            <option value="1">yes</option>
+        </select><br>
+        <h3>current job years</h3>
+        <input type="number" name="crjy" required="required" min="0"><br>
+        <h3>current house years</h3>
+        <input type="number" name="crhy" required="required" min="0"><br>
+        </div>
+        <div style="margin-left: 200px ; margin-top: 400px ;">
+        <button  style="color: black;background-color:burlywood;width:200px ;height: 40px;"type="submit">Evaluate the Loan Application</button>
+        <button><a href="/">Back</a></button>
+        </div>
+        </br>
+        <h3 style="color:black;margin-left:150px ;">{{res}}</h3>
+    </form>
+
+
+
+
+
+    </body>
+</html>
